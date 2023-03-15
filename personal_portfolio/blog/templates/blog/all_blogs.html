@@ -2,7 +2,7 @@ hello padonak2oo7
 <center>padonak2oo7<br>
     {% for blog in blogs %}
 
-    <H2>{{ blog.title }}</H2>
+    <a href="{% url 'blog:detail' blog.id %}"><H2>{{ blog.title }}</H2></a>
         <h5>{{ blog.date }}</h5>
         <p>{{ blog.description }}</p>
 
