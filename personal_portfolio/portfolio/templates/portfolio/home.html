@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>padonak was here!</title>
-</head>
-<body>
+{% extends 'portfolio/base.html' %}
+{% block content %}
 <center>padonak2oo7<br>
-<br>
-{% load static %}
-<a href="{% static 'portfolio/file.png' %}">padLoad</a><br>
-<img src="{% static 'portfolio/grl.jpg' %}">
-{% for project in projects %}
-    <h2>{{ project.title }}</h2> <br>
-    <p>{{ project.description }}</p><br>
-    <img src="{{ project.img.url }}" alt="padonak"><br>
-    {{ project.img }}<br>
-    {% if project.url %}
-    <a href="{{ project.url }}">padla place</a>
-    {% endif %}
+    <br>
+    {% load static %}
+    <a href="{% url 'blog:all_blogs' %}">padonak2oo7 blog</a><br>
+    <a href="{% static 'portfolio/file.png' %}">padLoad</a><br>
+    <img src="{% static 'portfolio/grl.jpg' %}">
+    {% for project in projects %}
+        <h2>{{ project.title }}</h2> <br>
+        <p>{{ project.description }}</p><br>
+        <img src="{{ project.img.url }}" alt="padonak"><br>
+        {{ project.img }}<br>
+        {% if project.url %}
+            <a href="{{ project.url }}">padla place</a>
+        {% endif %}
 
     {% endfor %}
 </center>
-</body>
-</html>
+{% endblock %}

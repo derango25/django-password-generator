@@ -1,0 +1,9 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<body>
+{% for blog in blog_archive %}
+<a href="{% url 'blog:detail' blog.id %}"><H2>{{ blog.title }}</H2></a>
+{% endfor %}
+<a href="/blog">Home</a>
+
+{% endblock %}

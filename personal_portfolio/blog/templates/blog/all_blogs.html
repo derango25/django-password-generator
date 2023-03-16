@@ -1,11 +1,15 @@
-hello padonak2oo7
+{% extends 'portfolio/base.html' %}
+{% block content %}
 <center>padonak2oo7<br>
+<h2>padonak has writed {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
     {% for blog in blogs %}
 
     <a href="{% url 'blog:detail' blog.id %}"><H2>{{ blog.title }}</H2></a>
-        <h5>{{ blog.date }}</h5>
-        <p>{{ blog.description }}</p>
+        <h5>{{ blog.date|date:'m / d / y' }}</h5>
+        <p>{{ blog.description|safe|truncatechars:130 }}</p>
 
     {% endfor %}
-
+<a href="blog_archive">padonak Archive</a>
 </center>
+
+{% endblock %}

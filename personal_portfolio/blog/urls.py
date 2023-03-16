@@ -10,5 +10,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.all_blogs, name = 'all_blogs' ),
     path('<int:blog_id>/', views.detail, name = 'detail' ),
+    path('blog_archive', views.blog_archive, name = 'blog_archive' ),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -6,3 +6,5 @@ class Project(models.Model):
     img = models.ImageField(upload_to='portfolio/images/')
     url = models.URLField(blank=True)
 
+    def __str__(self):
+        return self.title #возврат названия поста, а не названия проэкта
